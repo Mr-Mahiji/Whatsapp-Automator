@@ -2,7 +2,7 @@ from driver import Bot, Fore, Style
 import sys
 import os
 
-PREFIX = ""  # The national prefix without the +
+PREFIX = "91"  # The national prefix without the +
 
 
 class Menu:
