@@ -1,2 +1,2 @@
-TEST MESSAGE
-MULTILINE WITHOUT EMOJI :(
+Hi %NAME%, 
+> Thank you for being the part of Testing team of this *program.*  >Regards, MAHI
