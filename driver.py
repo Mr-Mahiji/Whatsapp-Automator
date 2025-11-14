@@ -19,7 +19,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Define a timeout for waiting for elements to load
-timeout = 120
+timeout = 12
 
 
 class Bot:
