@@ -68,10 +68,9 @@ class Menu:
 
         failed_numbers = []
 
-        def on_failure(name, number, reason):
-            failed_numbers.append(f"{name},{number},{reason}")
+        self.bot.on_send_failure = lambda name, number, reason, *_: failed_numbers.append(f"{name},{number},{reason}")
 
-        self.bot.on_send_failure = on_failure
+        #self.bot.on_send_failure = on_failure
 
         print(Fore.YELLOW + "\nStarting WhatsApp Web login..." + Style.RESET_ALL)
         print(Fore.CYAN + "Scan the QR code in WhatsApp Web!" + Style.RESET_ALL)
