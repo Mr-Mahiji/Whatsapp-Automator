@@ -82,24 +82,44 @@ class Menu:
             selection = int(input("> "))
 
         return str(files[selection])
+    def
+    def clear(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+    def ending_screen(self):
+        self.clear()
+        print(Fore.CYAN + "=" * 60)
+
+        
+        print(Fore.GREEN + """
+          ████╗  ███╗   ███╗ █████╗ ██╗  ███╗ ██╗
+          ████║  ████╗ ████║██╔══██╗██║  ███║ ██║
+          ████║  ██╔████╔██║███████║████████║ ██║
+          ████║  ██║╚██╔╝██║██╔══██║██╔═╗███║ ██║
+          ████║  ██║ ╚═╝ ██║██║  ██║██║ ║███║ ██║
+          ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝ ╚══╝ ╚═╝
+        """)
+
+        print(Fore.YELLOW + "               THANK YOU FOR USING THIS TOOL!")
+        print(Fore.CYAN + "=" * 60 + Style.RESET_ALL)
+
+        input(Fore.MAGENTA + "\nPress ENTER to exit..." + Style.RESET_ALL)
+        sys.exit(0)
 
     def quit(self):
-        print("If you like this script, please donate.")
-        print("Send MATIC, BEP20, ERC20, BTC, BCH, CRO, LTC, DASH, CELO, ZEC, XRP to:")
-        print(Fore.GREEN, "landifrancesco.wallet", Style.RESET_ALL)
-        sys.exit(0)
+        self.ending_screen()
 
     def run(self):
         while True:
             self.display()
             choice = input("Enter an option: ")
-            action = self.choices[choice]
+
+            action = self.choices.get(choice)
             if action:
                 action()
                 self.quit()
             else:
-                print(Fore.RED, choice, " is not a valide choice")
-                print(Style.RESET_ALL)
+                print(Fore.RED + f"'{choice}' is not a valid choice!" + Style.RESET_ALL)
 
 
 m = Menu()
