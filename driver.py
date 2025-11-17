@@ -111,7 +111,10 @@ class Bot:
             try:
                 if not page_load:
                     self.driver.get('https://web.whatsapp.com')
-                print("Attempting to load WhatsApp Web...")
+                #print("Attempting to load WhatsApp Web...")
+                print("\033[96m Preparing WhatsApp Web... \033[0m")
+                print("\033[92m▰▰▰▰▰  Loading...  ▰▰▰▰▰\033[0m")
+
 
                 try:
                     WebDriverWait(self.driver, timeout).until(
@@ -207,7 +210,7 @@ class Bot:
             self.type_message(message_box, message)
 
             # Random delay before sending
-            delay = random.uniform(2, 5)
+            delay = random.uniform(2, 3)
             print(f"Sending in {delay:.2f} seconds")
 
             try:
@@ -218,7 +221,7 @@ class Bot:
 
             sleep(delay)
 
-            print(Fore.GREEN + "Message and media (if any) sent successfully." + Style.RESET_ALL)
+            print(Fore.GREEN + "Message sent successfully." + Style.RESET_ALL)
             return False  # No error
 
         except Exception as e:
