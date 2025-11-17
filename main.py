@@ -82,7 +82,7 @@ class Menu:
             selection = int(input("> "))
 
         return str(files[selection])
-    def
+    
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
