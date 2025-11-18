@@ -124,12 +124,15 @@ class Bot:
         name = row[0] if len(row) > 0 else ""
         employee_id = row[2] if len(row) > 2 else ""
         date = row[3] if len(row) > 3 else ""
+        ddo = row[4] if len(row) > 4 else "."
 
         if self._options[0]:
             if name:
                 message = message.replace("%NAME%", name)
             if employee_id:
                 message = message.replace("%EMPLOYEE_ID%", employee_id)
+            if ddo:
+                message = message.replace("%DDO%", ddo)
         if date:
             message = message.replace("%DATE%", date)
 
